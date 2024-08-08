@@ -1,9 +1,8 @@
 const Header = () => {
   return (
-    <header className="bannerHome">
-      <h1>¡Pizzería Mamma Mia!</h1>
-      <p>¡Tenemos las mejores pizzas que podras encontrar!</p>
-      <hr className="linea" />
+    <header className="headerbanner">
+      <h1 className="fontdisplay">Bienvenidos a tu pizza favorita</h1>
+      <p>Selecciona la que quieras, todas están ricas!! 😋 </p>
     </header>
   );
 }

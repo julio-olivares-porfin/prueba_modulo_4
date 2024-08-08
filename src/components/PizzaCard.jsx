@@ -5,10 +5,7 @@ import { PizzasContext } from "../context/ContextPizzas";
 
 const CardPizza = () => {
   const navigate = useNavigate();
-  const { pizzas, addPizzaToCard } = useContext(PizzasContext);
-
-  console.log("pizzas Home-->", pizzas);
-  //   console.log("pizza Home img-->", pizzas[0].img);
+  const { pizzas, addPizzatoCart } = useContext(PizzasContext);
 
   return (
     <Row className="cardPizza pt-4">
@@ -16,16 +13,16 @@ const CardPizza = () => {
         <Col key={index} md={3} className="p-3">
           <Card>
           <Card.Img className="pizzadetimg" src={p.img} fluid />
-            {/* <img src={p.img} alt={p.name} className="card-img-top" /> */}
+            {}
             <Card.Body>
-              <Card.Title className="text-capitalize fw-bolder">
+              <Card.Title className="text-capitalize fw-bolder fontdisplay">
                 {p.name}
               </Card.Title>
               <hr />
               <Card.Text className="fw-bolder">Ingredientes:</Card.Text>
               <ul>
                 {p.ingredients.map((ingredient, i) => (
-                  <li key={i} className="text-capitalize">🍕 {ingredient}</li>
+                  <li key={i} className="text-capitalize">✔️{ingredient}</li>
                 ))}
               </ul>
             </Card.Body>
@@ -36,14 +33,14 @@ const CardPizza = () => {
                 variant="primary"
                 onClick={() => navigate(`/pizza/${p.id}`)}
               >
-                Ver Más 👀
+                Descripción
               </Button>
               <Button
                 className="m-1 btn-sm"
                 variant="danger"
-                onClick={() => addPizzaToCard(p)}
+                onClick={() => addPizzatoCart(p)}
               >
-                Añadir 🛒
+                Añadir al Carrito
               </Button>
             </Card.Footer>
           </Card>

@@ -11,20 +11,16 @@ const NavbarPizza = () => {
     0
   );
 
-  console.log("carrito -->", carrito);
-  console.log("total -->", totalAPagar);
-
   return (
     <Navbar
-      bg="info"
       variant="primary"
       expand="lg"
-      className="ps-5 pe-5 fixed-top"
+      className="ps-5 pe-5 fixed-top colornavbar"
     >
-      <Navbar.Brand className=" text-white">
+      <Navbar.Brand className="fontdisplay text-white">
         <Nav.Link as={NavLink} to="/" exact className="fs-4 ps-5">
           {" "}
-          🍕 Pizzería Mamma Mia!
+         Mamma Mia!
         </Nav.Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -37,7 +33,7 @@ const NavbarPizza = () => {
             as={NavLink}
             to="/carrito"
             exact
-            className="text-white fs-4 pe-5"
+            className="text-white fs-4 pe-5 fondocarrito"
           >
             🛒 $ {totalAPagar.toLocaleString()}
           </Nav.Link>

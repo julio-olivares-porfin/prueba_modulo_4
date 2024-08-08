@@ -4,7 +4,7 @@ import { PizzasContext } from "../context/ContextPizzas";
 import { Button, Card, Col, Row } from "react-bootstrap";
 
 function DetallePizzas() {
-  const { pizzas, addPizzaToCard } = useContext(PizzasContext);
+  const { pizzas, addPizzatoCart } = useContext(PizzasContext);
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -30,15 +30,15 @@ function DetallePizzas() {
             <ul variant="flush">
               {pizza.ingredients.map((ingredient, i) => (
                 <li className="text-capitalize" key={i}>
-                  🍕 {ingredient}
+                  ✔️ {ingredient}
                 </li>
               ))}
             </ul>
           </Card.Body>
           <Card.Footer className="py-3 footdetpizza">
             <h2>Precio: ${pizza.price.toLocaleString()}</h2>
-            <Button variant="danger" onClick={() => addPizzaToCard(pizza)}>
-              Añadir 🛒
+            <Button variant="danger" onClick={() => addPizzatoCart(pizza)}>
+              Añadir al Carrito
             </Button>
           </Card.Footer>
         </Col>

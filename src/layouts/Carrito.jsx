@@ -11,7 +11,7 @@ import {
 
 
 function Carrito() {
-  const { carrito, addPizzaToCard, removePizzaToCard } =
+  const { carrito, addPizzatoCart, removePizzatoCart } =
     useContext(PizzasContext);
   const precioTotal = carrito.reduce(
     (total, pizza) => total + pizza.price * pizza.count,
@@ -36,7 +36,7 @@ function Carrito() {
                   <InputGroup className="text-end">
                     <Button
                       variant="danger"
-                      onClick={() => removePizzaToCard(item)}
+                      onClick={() => removePizzatoCart(item)}
                     >
                       -
                     </Button>
@@ -44,7 +44,7 @@ function Carrito() {
                     {/* <Form.Control aria-label="cantidad de pizzas" value="0" /> */}
                     <Button
                       variant="primary"
-                      onClick={() => addPizzaToCard(item)}
+                      onClick={() => addPizzatoCart(item)}
                     >
                       +
                     </Button>

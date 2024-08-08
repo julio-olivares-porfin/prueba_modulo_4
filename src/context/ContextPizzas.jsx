@@ -17,7 +17,7 @@ const PizzasProvider = ({ children }) => {
     getPizzas();
   }, []);
 
-  const addPizzaToCard = ({ id, img, name, price }) => {
+  const addPizzatoCart = ({ id, img, name, price }) => {
     const producto = { id, img, name, price, count: 1 };
     const encontrarProducto = carrito.findIndex((p) => p.id === id);
 
@@ -30,7 +30,7 @@ const PizzasProvider = ({ children }) => {
     }
   };
 
-  const removePizzaToCard = (i) => {
+  const removePizzatoCart = (i) => {
     const index = carrito.findIndex((orden) => orden.id === i.id);
     if (index >= 0) {
       if (carrito[index].count > 1) {
@@ -50,8 +50,8 @@ const PizzasProvider = ({ children }) => {
       value={{
         pizzas,
         carrito,
-        addPizzaToCard,
-        removePizzaToCard,
+        addPizzatoCart,
+        removePizzatoCart,
         getPizzas,
       }}
     >
