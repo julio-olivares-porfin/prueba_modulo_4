@@ -33,7 +33,7 @@ const NavbarPizza = () => {
             as={NavLink}
             to="/carrito"
             exact
-            className="text-white fs-4 pe-5 fondocarrito"
+            className="fs-4 pe-2 fondocarrito"
           >
             🛒 $ {totalAPagar.toLocaleString()}
           </Nav.Link>

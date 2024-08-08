@@ -21,8 +21,14 @@ body {
   margin-top: 4rem;
 }
 
+.colorboton1 {
+  background-color: aquamarine;
+}
+
 .fondocarrito {
   background-color: #fff;
+  border-radius: 10px;
+  color: rgb(181, 106, 8);
 }
 
 .colornavbar {
@@ -63,7 +69,8 @@ li {
 
 .footdetpizza {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
 .cardDet {

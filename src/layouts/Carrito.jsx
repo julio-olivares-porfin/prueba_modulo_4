@@ -41,9 +41,9 @@ function Carrito() {
                       -
                     </Button>
                     <p className="m-2 fw-bold"> {item.count} </p>
-                    {/* <Form.Control aria-label="cantidad de pizzas" value="0" /> */}
+                    {}
                     <Button
-                      variant="primary"
+                      variant="success"
                       onClick={() => addPizzatoCart(item)}
                     >
                       +

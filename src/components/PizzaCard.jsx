@@ -30,14 +30,14 @@ const CardPizza = () => {
               <h3 className="fw-bolder pb-2">$ {p.price.toLocaleString()}</h3>
               <Button
                 className="m-1 btn-sm"
-                variant="primary"
+                variant="info"
                 onClick={() => navigate(`/pizza/${p.id}`)}
               >
                 Descripción
               </Button>
               <Button
                 className="m-1 btn-sm"
-                variant="danger"
+                variant="success"
                 onClick={() => addPizzatoCart(p)}
               >
                 Añadir al Carrito
