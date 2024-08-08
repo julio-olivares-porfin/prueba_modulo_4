@@ -18,8 +18,6 @@ function Carrito() {
     0
   );
 
-
-
   return (
       <Container className="carrito">
         <h5>Detalles del Pedido:</h5>
