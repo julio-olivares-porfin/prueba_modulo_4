@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { ContextPizzas } from "../context/ContextPizzas";
+import { PizzasContext } from "../context/ContextPizzas";
 
-const PizzaCard = () => {
+const CardPizza = () => {
   const navigate = useNavigate();
-  const { pizzas, addPizzaCart } = useContext(ContextPizzas)
+  const { pizzas, addPizzaToCard } = useContext(PizzasContext);
+
+  console.log("pizzas Home-->", pizzas);
+  //   console.log("pizza Home img-->", pizzas[0].img);
 
   return (
     <Row className="cardPizza pt-4">
@@ -13,6 +16,7 @@ const PizzaCard = () => {
         <Col key={index} md={3} className="p-3">
           <Card>
           <Card.Img className="pizzadetimg" src={p.img} fluid />
+            {/* <img src={p.img} alt={p.name} className="card-img-top" /> */}
             <Card.Body>
               <Card.Title className="text-capitalize fw-bolder">
                 {p.name}
@@ -37,7 +41,7 @@ const PizzaCard = () => {
               <Button
                 className="m-1 btn-sm"
                 variant="danger"
-                onClick={() => addPizzaCart(p)}
+                onClick={() => addPizzaToCard(p)}
               >
                 Añadir 🛒
               </Button>
@@ -46,7 +50,7 @@ const PizzaCard = () => {
         </Col>
       ))}
     </Row>
-  )
+  );
 }
 
-export default PizzaCard
+export default CardPizza;

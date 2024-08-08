@@ -1,42 +1,52 @@
 import { useContext } from "react";
-import { ContextPizzas } from "../context/ContextPizzas";
-import { Button, Col, Container, InputGroup, ListGroup, Row } from "react-bootstrap";
+import { PizzasContext } from "../context/ContextPizzas";
+import {
+  Button,
+  Col,
+  Container,
+  InputGroup,
+  ListGroup,
+  Row,
+} from "react-bootstrap";
 
-const Carrito = () => {
-  const { carrito, addPizzaCart, removePizzaCart } =
-    useContext(ContextPizzas);
-  const totalPrice = carrito.reduce(
-    (total, pizza) => pizza.price * pizza.count,
+
+function Carrito() {
+  const { carrito, addPizzaToCard, removePizzaToCard } =
+    useContext(PizzasContext);
+  const precioTotal = carrito.reduce(
+    (total, pizza) => total + pizza.price * pizza.count,
     0
   );
 
-  return (
 
+
+  return (
       <Container className="carrito">
-        <h4>Detalle del Pedido:</h4>
+        <h5>Detalles del Pedido:</h5>
         <ListGroup variant="flush">
-          {carrito.map((item, i) =>(
-            <ListGroup.Item key={i} className="" >
+          {carrito.map((item, i) => (
+            <ListGroup.Item key={i} className="pt-2">
               <Row>
                 <Col md={1}>
                   <img src={item.img} alt={item.name} className="img-fluid" />
                 </Col>
-                <Col>
-                  <h5 className="">{item.name}</h5>
-                  <p className="">${item.price.toLocaleString()}</p>
+                <Col md={9} className="precioCarrito">
+                  <h5 className="text-capitalize">{item.name}</h5>
+                  <p className="text-end m-0">${item.price.toLocaleString()}</p>
                 </Col>
                 <Col md={2}>
                   <InputGroup className="text-end">
                     <Button
                       variant="danger"
-                      onClick={() => removePizzaCart(item)}
+                      onClick={() => removePizzaToCard(item)}
                     >
                       -
                     </Button>
                     <p className="m-2 fw-bold"> {item.count} </p>
+                    {/* <Form.Control aria-label="cantidad de pizzas" value="0" /> */}
                     <Button
                       variant="primary"
-                      onClick={() => addPizzaCart(item)}
+                      onClick={() => addPizzaToCard(item)}
                     >
                       +
                     </Button>
@@ -48,14 +58,13 @@ const Carrito = () => {
         </ListGroup>
         <div className="text-start mt-4">
           <hr />
-          <h3>Total: ${totalPrice.toLocaleString()}</h3>
+          <h3>Total: ${precioTotal.toLocaleString()}</h3>
           <Button variant="success" className="btn btn-primary mt-2">
             Ir a pagar
           </Button>
         </div>
       </Container>
-
-  )
+  );
 }
 
-export default Carrito
+export default Carrito;

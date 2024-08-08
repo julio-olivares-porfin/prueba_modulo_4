@@ -6,7 +6,7 @@ import Carrito from "./layouts/Carrito";
 import NotFound from "./layouts/NotFound";
 import PizzasProvider from "./context/ContextPizzas";
 
-function App() {
+const App = () => {
   return (
     <PizzasProvider>
       <PizzaNavbar />
@@ -17,7 +17,6 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </PizzasProvider>
-  )
-}
-
-export default App
+  );
+};
+export default App;

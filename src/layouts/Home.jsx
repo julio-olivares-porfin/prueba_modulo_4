@@ -1,12 +1,14 @@
+
 import Header from "../components/Header";
-import PizzaCard from "../components/PizzaCard";
+import CardPizza from "../components/PizzaCard";
 
 const Home = () => {
+  
 
   return (
     <>
       <Header />
-      <PizzaCard/>
+      <CardPizza/>
     </>
   );
 };
